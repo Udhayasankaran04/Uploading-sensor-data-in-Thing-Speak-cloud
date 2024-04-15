@@ -133,6 +133,7 @@ void loop()
 
 # OUTPUT:
 <img src="https://github.com/Udhayasankaran04/Uploading-sensor-data-in-Thing-Speak-cloud/assets/119393933/f810151d-a465-4d11-80a2-3c11bdafc73f" width="500" height="300">
+
 <img src="https://github.com/Udhayasankaran04/Uploading-sensor-data-in-Thing-Speak-cloud/assets/119393933/b39f1e10-cb03-424b-bd9d-ebffbd538329" width="500" height="300">
 
 # RESULT:
