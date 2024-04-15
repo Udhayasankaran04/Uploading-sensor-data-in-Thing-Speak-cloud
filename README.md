@@ -1,4 +1,6 @@
-# Uploading temperature sensor data in Thing Speak cloud
+#### NAME: UDHAYA SANKARAN M
+#### REG NO: 212222110051 
+# EXP-03 Uploading temperature sensor data in Thing Speak cloud
 
 # AIM:
 To monitor the temperature sensor data in the Thing speak using an ESP32 controller.
