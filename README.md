@@ -71,9 +71,64 @@ Automatically act on your data and communicate using third-party services like T
 
 
 # PROGRAM:
+```
+#include"ThingSpeak.h"
+#include<WiFi.h>
 
+char ssid[]="OC NET KEKUDHA DA GOPAL";
+char pass[]="bruhhhhh";
+
+const int trigger=25;
+const int echo=26;
+long T;
+float distanceCM;
+WiFiClient client;
+
+unsigned long myChannelField = 2487167;
+const int ChannelField = 1 ;
+const char *myWriteAPIKey="79K5D7PGTXHDG6GH";
+
+void setup()
+{
+  Serial.begin(115200);
+  pinMode (trigger,OUTPUT);
+  pinMode (echo,INPUT);
+  WiFi.mode(WIFI_STA);
+  ThingSpeak.begin(client);
+}
+
+void loop()
+{
+  if(WiFi.status()!=WL_CONNECTED)
+  {
+    Serial.print("Attempting to connet to SSID");
+    Serial.println(ssid);
+    while(WiFi.status() != WL_CONNECTED)
+    {
+      WiFi.begin(ssid, pass);
+      Serial.print(".");
+      delay(5000);
+    }
+    Serial.println("\nConnected");
+  }
+  digitalWrite(trigger,LOW);
+  delay(1);
+  digitalWrite(trigger,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigger, LOW);
+  T= pulseIn(echo, HIGH);
+  distanceCM= T * 0.034;
+  distanceCM = distanceCM/2;
+  Serial.print("Distance in cm: ");
+  Serial.println(distanceCM);
+  ThingSpeak.writeField(myChannelField, ChannelField, distanceCM, myWriteAPIKey);
+  delay(1000);
+}
+
+```
 # CIRCUIT DIAGRAM:
-
+<img src="![jjjjj](https://github.com/Udhayasankaran04/Uploading-sensor-data-in-Thing-Speak-cloud/assets/119393933/f810151d-a465-4d11-80a2-3c11bdafc73f)
+" alt="alt text" width="500" height="300" class="center"/>
 # OUTPUT:
 
 # RESULT:
