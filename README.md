@@ -75,8 +75,8 @@ Automatically act on your data and communicate using third-party services like T
 #include"ThingSpeak.h"
 #include<WiFi.h>
 
-char ssid[]="OC NET KEKUDHA DA GOPAL";
-char pass[]="bruhhhhh";
+char ssid[]="Udhay's iphone";
+char pass[]="123456789";
 
 const int trigger=25;
 const int echo=26;
